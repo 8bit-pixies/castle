@@ -81,6 +81,9 @@ def play_blocking(env):
     show_screen(scr, text_render, info, update)
     curses.endwin()
     sys.stdout = correct_stdout
+    text = env.get_board_info()["text"].split("\n")
+    print("\n".join(text))
+    input("\nPress Enter to quit")
 
 
 def play(env):
@@ -144,6 +147,7 @@ def play(env):
     # scr.keypad(0)
     curses.echo()
     curses.endwin()
-    _, info = env.render()
-    print("\n".join(info))
     sys.stdout = correct_stdout
+    text = env.get_board_info()["text"].split("\n")
+    print("\n".join(text))
+    input("Press Enter to quit")

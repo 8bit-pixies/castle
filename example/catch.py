@@ -1,6 +1,12 @@
 """
 custom environment to play "catch"
 goal is to catch objects falling down.
+
+To run this example try:
+
+```
+python -m example.catch
+```
 """
 
 import gym
