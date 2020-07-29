@@ -1,6 +1,9 @@
 # castle
 You know like...a sand castle in a sandbox or something? Basically a setup to play gym environments
 
+![Castle Example](castle.gif)
+
+
 **Why?**
 
 I like creating gym environments. But I want to play inside them too. It would be pretty cool
