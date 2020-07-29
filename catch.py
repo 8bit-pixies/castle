@@ -178,8 +178,8 @@ class CatchEnv(gym.Env):
 
 
 if __name__ == "__main__":
-    from castle.base import play_blocking
+    from castle.base import play_blocking, play
     from castle.ascii import AsciiWrapper
 
     env = AsciiWrapper(CatchEnv({}))
-    play_blocking(env)
+    play(env)
