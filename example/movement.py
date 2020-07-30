@@ -138,4 +138,5 @@ if __name__ == "__main__":
     from castle.ascii import AsciiWrapper
 
     env = AsciiWrapper(GridWorld(block=Block(1, 1, 4, 4)))
+    # env = AsciiWrapper(GridWorld(maze = np.zeros((36, 100)), block=Block(1, 1, 3, 15)))
     play_random(env, 0.01)
