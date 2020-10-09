@@ -26,6 +26,14 @@ Types of games to target:
 -  Games which run based on a "frame-rate" (e.g. atari-esque)
 -  Games which wait for input (e.g. solving a path finding environment)
 
+**Examples**
+
+See `example/` folder. The various scenarios and approaches are shown there:
+
+*  `blocking`: `simple2x2` whereby you navigate a maze
+*  `random`: `movement` - a demo example whereby the agent moves around at random
+*  `async`: `catch` - a pseudo-async example for an atari-esque game
+
 **Goals and Milestones**
 
 *  Ascii wrapper

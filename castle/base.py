@@ -29,7 +29,7 @@ class CastleMixin(object):
         return 0
 
 
-def play_blocking(env):
+def play_blocking(env, keys=[]):
     """
     performs rollout on a blocking environment
     """
@@ -78,6 +78,13 @@ def play_blocking(env):
                 # TODO some kind of error checking
                 action = k
                 update = True
+
+        # check for "W", "A", "S", "D" override
+        if key in [ord(x) for x in keys]:
+            action = chr(key)
+            print(action)
+            update = True
+
     show_screen(scr, text_render, info, update)
     curses.endwin()
     sys.stdout = correct_stdout
@@ -86,7 +93,7 @@ def play_blocking(env):
     input("\nPress Enter to quit")
 
 
-def play(env):
+def play(env, keys=[]):
     """
     performs rollout
     """
@@ -137,6 +144,13 @@ def play(env):
                 action = k
                 update = True
                 start_time = time.time()
+
+        # check for "W", "A", "S", "D" override
+        if key in [ord(x) for x in keys]:
+            action = chr(key)
+            print(action)
+            update = True
+            start_time = time.time()
 
         if time.time() - start_time > 1:
             action = 0
