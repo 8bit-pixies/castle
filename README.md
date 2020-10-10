@@ -38,8 +38,9 @@ See `example/` folder. The various scenarios and approaches are shown there:
 
 *  Ascii wrapper
 *  Ascii wrapper with `colorama`
-*  Pyglet with ascii
-*  Pyglet with sprites
+*  <s>Pyglet with ascii</s>
+*  <s>Pyglet with sprites</s>
+*  Kivy for cross app development. 
 
 Who knows!
 
