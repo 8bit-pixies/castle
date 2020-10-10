@@ -44,10 +44,16 @@ def play_blocking(env, keys=[]):
         if update and board is not None:
             scr.clear()
             for idx, el in enumerate(board):
-                scr.addstr(idx, 0, el)
+                try:
+                    scr.addstr(idx, 0, el)
+                except:
+                    pass
             idx += 1
             for tidx, el in enumerate(text):
-                scr.addstr(idx + tidx, 0, el)
+                try:
+                    scr.addstr(idx + tidx, 0, el)
+                except:
+                    pass
 
         return idx
 

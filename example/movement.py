@@ -112,8 +112,14 @@ class GridWorld(gym.Env):
         self.observation_space = Box(0, 10, (self.height, self.width))
 
     def step(self, action):
-        self.last_action = Direction(action).name.ljust(5, " ")
-        self.block.try_move(action, self.maze)
+        if type(action) is int:
+            self.last_action = Direction(action).name.ljust(5, " ")
+            self.last_direction = Direction(action)
+        else:
+            map_action = {"w": "N", "s": "S", "a": "W", "d": "E"}
+            self.last_action = Direction[map_action[action]].name.ljust(5, " ")
+            self.last_direction = Direction[map_action[action]]
+        self.block.try_move(self.last_direction.value, self.maze)
         return None, None, None, None
 
     def get_board(self):
@@ -138,5 +144,5 @@ if __name__ == "__main__":
     from castle.ascii import AsciiWrapper
 
     env = AsciiWrapper(GridWorld(block=Block(1, 1, 4, 4)))
-    # env = AsciiWrapper(GridWorld(maze = np.zeros((36, 100)), block=Block(1, 1, 3, 15)))
-    play_random(env, 0.1)
+    # play_blocking(env, ['w', 'a', 's', 'd'])
+    play_random(env)
