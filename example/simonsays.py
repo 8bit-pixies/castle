@@ -9,9 +9,7 @@ import gym
 
 
 class SimonSays(gym.Env):
-    def __init__(
-        self, switch_at_n_wins=2, target_goals=5, max_steps=10
-    ):
+    def __init__(self, switch_at_n_wins=2, target_goals=5, max_steps=10):
         # a win is recorded if n target goals are reached
         self.target_goals = target_goals
         # when we win n times, the target switches
@@ -101,13 +99,11 @@ class SimonSays(gym.Env):
             1: "0",
             -1: "1",
             "text": "reward gained is: {}\ntarget0: {}\ntarget1: {}\ncurrent hidden is: {}".format(
-                self.reward,
-                self.target0,
-                self.target1,
-                self.current_target
-            )
+                self.reward, self.target0, self.target1, self.current_target
+            ),
         }
         return chr_mapping
+
 
 if __name__ == "__main__":
     from castle.base import play_blocking, play_random
