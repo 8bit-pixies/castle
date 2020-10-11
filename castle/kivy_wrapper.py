@@ -80,11 +80,11 @@ class KivyWrapper(BoxLayout):
 
 
 def app_wrapper(env):
-    class MyApp(App):
+    class KivyApp(App):
         def build(self):
             game = KivyWrapper(env=env)
             game.env.reset()
             Clock.schedule_interval(game.update, 1.0 / 60.0)
             return game
 
-    return MyApp
+    return KivyApp

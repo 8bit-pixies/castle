@@ -40,7 +40,7 @@ See `example/` folder. The various scenarios and approaches are shown there:
 *  Ascii wrapper with `colorama`
 *  <s>Pyglet with ascii</s>
 *  <s>Pyglet with sprites</s>
-*  Kivy for cross app development. 
+*  Kivy for cross app development. Need to remove any numpy or gym dependencies to build it better.
 
 Who knows!
 
